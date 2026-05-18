@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, UtensilsCrossed, Sparkles } from "lucide-react";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=85&auto=format&fit=crop";
+const HERO_IMAGE = "/images/hero/banner.jpg";
+const HERO_SIDE_IMAGE = "/images/hero/doner-closeup.jpg";
 
 export default function Hero() {
   return (
@@ -113,7 +113,7 @@ export default function Hero() {
           >
             <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl glow-orange">
               <img
-                src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=80&auto=format&fit=crop"
+                src={HERO_SIDE_IMAGE}
                 alt="Döner Kebab Nahaufnahme"
                 className="w-full aspect-[4/5] object-cover"
                 loading="eager"
