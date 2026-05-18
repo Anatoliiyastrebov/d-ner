@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Flame } from "lucide-react";
 import { navLinks } from "../data/content";
@@ -33,14 +34,14 @@ export default function Navbar() {
         }`}
       >
         <motion.div className="flex items-center justify-between px-4 md:px-6">
-          <a href="#" className="flex items-center gap-2.5 group">
+          <Link to="/" className="flex items-center gap-2.5 group">
             <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-red to-brand-orange shadow-lg glow-orange">
               <Flame className="w-5 h-5 text-white" strokeWidth={2.5} />
             </span>
             <span className="font-display font-bold text-lg md:text-xl text-white tracking-tight">
               Döner<span className="text-brand-orange">&</span>Grill
             </span>
-          </a>
+          </Link>
 
           <ul className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (

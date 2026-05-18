@@ -1,27 +1,18 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Menu from "./components/Menu";
-import Delivery from "./components/Delivery";
-import Offers from "./components/Offers";
-import Reviews from "./components/Reviews";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import FloatingOrderButton from "./components/FloatingOrderButton";
+import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import HomePage from "./pages/HomePage";
+import ImpressumPage from "./pages/ImpressumPage";
+import DatenschutzPage from "./pages/DatenschutzPage";
 
 export default function App() {
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Menu />
-        <Delivery />
-        <Offers />
-        <Reviews />
-        <Contact />
-      </main>
-      <Footer />
-      <FloatingOrderButton />
+      <ScrollToTop />
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/impressum" element={<ImpressumPage />} />
+      <Route path="/datenschutz" element={<DatenschutzPage />} />
+      </Routes>
     </>
   );
 }
