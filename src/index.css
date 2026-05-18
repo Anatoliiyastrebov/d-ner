@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --color-brand-dark: #0a0a0b;
+  --color-brand-card: #141416;
+  --color-brand-elevated: #1c1c1f;
+  --color-brand-red: #e63946;
+  --color-brand-orange: #f77f00;
+  --color-brand-gold: #d4a017;
+  --color-brand-amber: #fcbf49;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-dark text-zinc-300 font-sans antialiased overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-brand-orange/30 text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-strong {
+    @apply bg-white/[0.08] backdrop-blur-2xl border border-white/15;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-brand-gold via-brand-amber to-brand-orange bg-clip-text text-transparent;
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 40px rgba(247, 127, 0, 0.25);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 40px rgba(230, 57, 70, 0.2);
+  }
+}
