@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Flame } from "lucide-react";
-import { navLinks } from "../data/content";
+import { navLinks, phone } from "../data/content";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -64,7 +64,7 @@ export default function Navbar() {
               Speisekarte
             </a>
             <a
-              href="#lieferung"
+              href={phone.href}
               className="px-5 py-2.5 text-sm font-semibold text-brand-dark rounded-xl bg-gradient-to-r from-brand-orange to-brand-red hover:shadow-lg hover:shadow-brand-orange/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               Jetzt bestellen
@@ -118,7 +118,7 @@ export default function Navbar() {
                 ))}
               </ul>
               <a
-                href="#lieferung"
+                href={phone.href}
                 onClick={() => setMobileOpen(false)}
                 className="mt-10 block w-full text-center px-6 py-4 font-semibold text-brand-dark rounded-xl bg-gradient-to-r from-brand-orange to-brand-red"
               >

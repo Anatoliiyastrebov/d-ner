@@ -19,6 +19,11 @@ export default function Menu() {
             <MenuCard key={item.id} item={item} index={index} />
           ))}
         </div>
+
+        <p className="mt-10 text-center text-sm text-zinc-500">
+          Alle Preise in Euro inkl. gesetzlicher MwSt. Informationen zu Allergenen und
+          Zusatzstoffen erhältst du auf Nachfrage bei uns im Laden oder am Telefon.
+        </p>
       </div>
     </section>
   );

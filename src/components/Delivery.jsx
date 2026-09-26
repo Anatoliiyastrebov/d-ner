@@ -1,14 +1,6 @@
 import { motion } from "framer-motion";
-import { Bike, Utensils, Zap, Truck, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import { deliveryPartners } from "../data/content";
-
-const iconMap = {
-  bike: Bike,
-  utensils: Utensils,
-  zap: Zap,
-  truck: Truck,
-};
 
 export default function Delivery() {
   return (
@@ -19,7 +11,7 @@ export default function Delivery() {
         <SectionHeading
           badge="Lieferdienst"
           title="Schnell zu dir nach Hause"
-          subtitle="Bestelle über deine Lieblings-App oder unsere eigene Lieferung."
+          subtitle="Frisch zubereitet und schnell geliefert."
         />
 
         <motion.div
@@ -27,7 +19,7 @@ export default function Delivery() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12 flex flex-col sm:flex-row items-center justify-center gap-4 p-6 md:p-8 rounded-3xl glass-strong glow-orange max-w-xl mx-auto"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 p-6 md:p-8 rounded-3xl glass-strong glow-orange max-w-xl mx-auto"
         >
           <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-red">
             <Clock className="w-8 h-8 text-white" />
@@ -39,36 +31,6 @@ export default function Delivery() {
             <p className="text-zinc-400 mt-1">Heiß, frisch und direkt an deine Tür</p>
           </div>
         </motion.div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {deliveryPartners.map((partner, index) => {
-            const Icon = iconMap[partner.icon];
-            return (
-              <motion.a
-                key={partner.name}
-                href="#"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="group flex flex-col items-center p-8 rounded-3xl glass border border-white/5 hover:border-white/20 transition-all duration-300 text-center"
-              >
-                <div
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${partner.color} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <Icon className="w-8 h-8 text-white" strokeWidth={2} />
-                </div>
-                <h3 className="font-display font-bold text-lg text-white">
-                  {partner.name}
-                </h3>
-                <span className="mt-2 text-sm text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity">
-                  Jetzt bestellen →
-                </span>
-              </motion.a>
-            );
-          })}
-        </div>
       </div>
     </section>
   );

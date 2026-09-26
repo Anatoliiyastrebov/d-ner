@@ -1,10 +1,11 @@
 import LegalPageLayout from "../components/LegalPageLayout";
+import { phone } from "../data/content";
 
 export default function ImpressumPage() {
   return (
     <LegalPageLayout title="Impressum">
       <p className="text-xs uppercase tracking-wider text-brand-gold font-semibold">
-        Angaben gemäß § 5 TMG
+        Angaben gemäß § 5 DDG
       </p>
       <p>
         <strong className="text-zinc-300">Döner & Grill Haus</strong> (Demo)
@@ -23,7 +24,7 @@ export default function ImpressumPage() {
       <p>
         <strong className="text-zinc-300">Kontakt</strong>
         <br />
-        Telefon: +49 30 123 456 78
+        Telefon: {phone.display}
         <br />
         E-Mail:{" "}
         <a
@@ -41,25 +42,11 @@ export default function ImpressumPage() {
         DE123456789 (Muster, Demo)
       </p>
       <p>
-        <strong className="text-zinc-300">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</strong>
+        <strong className="text-zinc-300">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong>
         <br />
         Max Mustermann
         <br />
         Musterstraße 1, 10115 Berlin
-      </p>
-      <p>
-        <strong className="text-zinc-300">EU-Streitschlichtung</strong>
-        <br />
-        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-        <a
-          href="https://ec.europa.eu/consumers/odr/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-brand-orange hover:text-brand-amber transition-colors"
-        >
-          https://ec.europa.eu/consumers/odr/
-        </a>
-        . Unsere E-Mail-Adresse finden Sie oben im Impressum.
       </p>
       <p>
         <strong className="text-zinc-300">Verbraucherstreitbeilegung / Universalschlichtungsstelle</strong>

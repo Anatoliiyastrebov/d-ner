@@ -1,7 +1,51 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import { openingHours } from "../data/content";
+import { openingHours, phone } from "../data/content";
+
+// Google Maps lädt erst nach Klick: vorher werden keine Daten an Google übertragen.
+function MapEmbed() {
+  const [loaded, setLoaded] = useState(false);
+
+  if (loaded) {
+    return (
+      <iframe
+        title="Standort Döner & Grill Haus auf Google Maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.409742294!2d13.3888!3d52.5200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBerlin!5e0!3m2!1sde!2sde!4v1"
+        width="100%"
+        height="100%"
+        style={{ border: 0, minHeight: 400 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="grayscale-[30%] contrast-[1.1] hover:grayscale-0 transition-all duration-500"
+      />
+    );
+  }
+
+  return (
+    <div className="h-full min-h-[400px] flex flex-col items-center justify-center gap-4 p-8 text-center">
+      <MapPin className="w-10 h-10 text-brand-orange" />
+      <p className="max-w-sm text-sm text-zinc-400 leading-relaxed">
+        Beim Laden der Karte werden Daten (u. a. deine IP-Adresse) an Google übertragen. Mehr dazu
+        in der{" "}
+        <Link to="/datenschutz" className="text-brand-orange hover:text-brand-amber transition-colors">
+          Datenschutzerklärung
+        </Link>
+        .
+      </p>
+      <button
+        type="button"
+        onClick={() => setLoaded(true)}
+        className="px-6 py-3 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-brand-orange to-brand-red hover:shadow-lg hover:shadow-brand-orange/30 transition-all"
+      >
+        Karte laden
+      </button>
+    </div>
+  );
+}
 
 export default function Contact() {
   return (
@@ -42,10 +86,10 @@ export default function Contact() {
               <div>
                 <h3 className="font-display font-bold text-white">Telefon</h3>
                 <a
-                  href="tel:+493012345678"
+                  href={phone.href}
                   className="mt-1 block text-brand-orange hover:text-brand-amber transition-colors"
                 >
-                  +49 30 123 456 78
+                  {phone.display}
                 </a>
               </div>
             </div>
@@ -78,17 +122,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="rounded-3xl overflow-hidden border border-white/10 min-h-[400px] glass"
           >
-            <iframe
-              title="Standort Döner & Grill Haus auf Google Maps"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.409742294!2d13.3888!3d52.5200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851c655f20989%3A0x26bbfb4e84674c63!2sBerlin!5e0!3m2!1sde!2sde!4v1"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: 400 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale-[30%] contrast-[1.1] hover:grayscale-0 transition-all duration-500"
-            />
+            <MapEmbed />
           </motion.div>
         </div>
       </div>

@@ -1,3 +1,8 @@
+export const phone = {
+  display: "+49 30 23125 042",
+  href: "tel:+493023125042",
+};
+
 export const menuItems = [
   {
     id: "classic-doner",
@@ -40,29 +45,6 @@ export const menuItems = [
     description: "Knusprige Falafel mit Hummus, Tahini und frischem Tabouleh – vegetarisch.",
     price: "7,90 €",
     image: "/images/menu/falafel-box.jpg",
-  },
-];
-
-export const deliveryPartners = [
-  {
-    name: "Lieferando",
-    icon: "bike",
-    color: "from-orange-500 to-red-600",
-  },
-  {
-    name: "Uber Eats",
-    icon: "utensils",
-    color: "from-emerald-500 to-green-700",
-  },
-  {
-    name: "Wolt",
-    icon: "zap",
-    color: "from-cyan-400 to-blue-600",
-  },
-  {
-    name: "Eigene Lieferung",
-    icon: "truck",
-    color: "from-brand-gold to-brand-orange",
   },
 ];
 

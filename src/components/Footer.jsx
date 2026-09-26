@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Flame } from "lucide-react";
-import { navLinks } from "../data/content";
+import { navLinks, phone } from "../data/content";
 
 const legalLinks = [
   { to: "/impressum", label: "Impressum" },
@@ -47,10 +47,10 @@ export default function Footer() {
             <p className="text-sm text-zinc-500">Hauptstraße 42, 10115 Berlin</p>
             <p className="text-sm text-zinc-500 mt-1">
               <a
-                href="tel:+493012345678"
+                href={phone.href}
                 className="hover:text-brand-orange transition-colors"
               >
-                +49 30 123 456 78
+                {phone.display}
               </a>
             </p>
             <p className="text-sm text-zinc-500 mt-1">

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, UtensilsCrossed, Sparkles } from "lucide-react";
+import { phone } from "../data/content";
 
 const HERO_IMAGE = "/images/hero/banner.jpg";
 const HERO_SIDE_IMAGE = "/images/hero/doner-closeup.jpg";
@@ -69,7 +70,7 @@ export default function Hero() {
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="#lieferung"
+                href={phone.href}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-brand-dark rounded-2xl bg-gradient-to-r from-brand-orange via-brand-amber to-brand-gold hover:shadow-xl hover:shadow-brand-orange/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 Jetzt bestellen

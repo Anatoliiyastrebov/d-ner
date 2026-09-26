@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ShoppingBag } from "lucide-react";
+import { Phone } from "lucide-react";
+import { phone } from "../data/content";
 
 export default function MenuCard({ item, index }) {
   return (
@@ -33,15 +34,15 @@ export default function MenuCard({ item, index }) {
         <p className="mt-2 text-sm text-zinc-500 leading-relaxed line-clamp-2">
           {item.description}
         </p>
-        <motion.button
-          type="button"
+        <motion.a
+          href={phone.href}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="mt-5 w-full flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white rounded-xl bg-white/5 border border-white/10 group-hover:bg-gradient-to-r group-hover:from-brand-orange group-hover:to-brand-red group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-brand-orange/20 transition-all duration-300"
         >
-          <ShoppingBag className="w-4 h-4" />
-          Bestellen
-        </motion.button>
+          <Phone className="w-4 h-4" />
+          Telefonisch bestellen
+        </motion.a>
       </div>
 
       <div className="absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ring-1 ring-brand-orange/30 group-hover:glow-orange" />

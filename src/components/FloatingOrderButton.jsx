@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
-import { ShoppingCart } from "lucide-react";
+import { Phone } from "lucide-react";
+import { phone } from "../data/content";
 
 export default function FloatingOrderButton() {
   return (
     <motion.a
-      href="#lieferung"
+      href={phone.href}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: "spring", stiffness: 260, damping: 20 }}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-4 rounded-full bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold shadow-2xl shadow-brand-orange/40 glow-orange md:bottom-8 md:right-8"
-      aria-label="Jetzt bestellen"
+      aria-label="Jetzt anrufen und bestellen"
     >
-      <ShoppingCart className="w-5 h-5" />
+      <Phone className="w-5 h-5" />
       <span className="hidden sm:inline">Bestellen</span>
       <motion.span
         animate={{ scale: [1, 1.2, 1] }}
